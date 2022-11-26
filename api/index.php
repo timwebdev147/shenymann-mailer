@@ -48,7 +48,7 @@ $port = 587;
 };
     $fullname = $email = $phone = $message = $subject = '';
 
-    if ( isset($_POST['submit']) ) {
+    if (isset($_POST['submit']) && isset($_POST['comment'])) {
    # code...
    $fullname = $_POST['fullname'];
    $email = $_POST['email'];
@@ -59,9 +59,12 @@ $port = 587;
 }
     
    
-   // The subject line of the email
-
+if ($fullname != '' && $email != '' && $phone != '' && $message != '' && $subject != '') {
+    # code...
+    // The subject line of the email
+    
 // The plain-text body of the email
+
 $bodyText =  "Hello Shenymann you have mail from '.$fullname.' '.$phone.'\r\n".$message;
 
 // The HTML-formatted body of the email
@@ -97,6 +100,7 @@ try {
     echo "An error occurred. {$e->errorMessage()}", PHP_EOL; //Catch errors from PHPMailer.
 } catch (Exception $e) {
     echo "Email not sent. {$mail->ErrorInfo}", PHP_EOL; //Catch errors from Amazon SES.
+}
 }
 
 ?>
