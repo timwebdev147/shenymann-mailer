@@ -63,10 +63,10 @@ $port = 587;
     
 // The plain-text body of the email
 
-$bodyText =  "Hello Shenymann you have mail from '.$fullname.' '.$phone.'\r\n".$message;
+$bodyText =  "Hello Shenymann you have mail from '.$fullname.' phone number : '.$phone.' email address : '.$email.'\r\n".$message;
 
 // The HTML-formatted body of the email
-$bodyHtml = '<h1>Hello Shenymann </h1> <br/> <p> You have a mail from '.$fullname.' '.$phone. ' <br/> received through ShenyMan.org. </p> <br/>
+$bodyHtml = '<h4>from www.shenymann.org </h4> <br/> <p> You have a mail from '.$fullname.'<br/> phone number : '.$phone. '<br/> email address : '.$email.' <br/> received through ShenyMan.org. </p> <br/>
     <p>'.$message.'</p>';
 
 $mail = new PHPMailer(true);
