@@ -46,18 +46,17 @@ $port = 587;
     $data = htmlspecialchars($data);
     return $data;
 };
-    $fullname = $email = $phone = $message = $subject = '';
+    $fullname = $email = $phone = $message = $subject = 'hey';
 
     if ( isset($_POST['submit']) ) {
    # code...
-   $fullname = Test_input($_POST['fullname']);
-   $email = Test_input($_POST['email']);
-   $phone = Test_input($_POST['number']);
-   $message = Test_input($_POST['comment']);
+   $fullname = $_POST['fullname'];
+   $email = $_POST['email'];
+   $phone = $_POST['number'];
+   $message = $_POST['comment'];
    $subject = $_POST['subject'];
 
 }
-   if($fullname != '' && $email != '' && $phone != '' && $message != ''){
     
    
    // The subject line of the email
@@ -98,7 +97,6 @@ try {
     echo "An error occurred. {$e->errorMessage()}", PHP_EOL; //Catch errors from PHPMailer.
 } catch (Exception $e) {
     echo "Email not sent. {$mail->ErrorInfo}", PHP_EOL; //Catch errors from Amazon SES.
-}
 }
 
 ?>
