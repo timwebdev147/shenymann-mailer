@@ -56,10 +56,8 @@ $port = 587;
    $message = $_POST['comment'];
    $subject = $_POST['subject'];
 
-}
-    
    
-if (isset($_POST['submit']) && isset($_POST['comment'])) {
+   
     # code...
     // The subject line of the email
     
