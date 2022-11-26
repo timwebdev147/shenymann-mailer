@@ -10,16 +10,16 @@ use PHPMailer\PHPMailer\Exception;
 
 // If necessary, modify the path in the require statement below to refer to the
 // location of your Composer autoload.php file.
-require '/var/task/user/vendor/autoload.php';
+require '../vendor/autoload.php';
 
 // Replace sender@example.com with your "From" address.
 // This address must be verified with Amazon SES.
 $sender = 'contact.webberman@gmail.com';
-$senderName = 'Akinsanmi Timothy';
+$senderName = 'Webber Man Mailer';
 
 // Replace recipient@example.com with a "To" address. If your account
 // is still in the sandbox, this address must be verified.
-$recipient = 'akinsanmidev@gmail.com';
+$recipient = 'info@shenymann.org';
 
 // Replace smtp_username with your Amazon SES SMTP user name.
 $usernameSmtp = 'AKIAZI6CELMNOEXAY4CR';
@@ -46,28 +46,27 @@ $port = 587;
     $data = htmlspecialchars($data);
     return $data;
 };
-    $fullname = $email = $phone = $message = '';
+    $fullname = $email = $phone = $message = $subject = '';
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['fullname']) 
-    && isset($_POST['email']) && isset($_POST['number']) && isset($_POST['comment'])) {
+    if ( isset($_POST['submit']) ) {
    # code...
    $fullname = Test_input($_POST['fullname']);
    $email = Test_input($_POST['email']);
    $phone = Test_input($_POST['number']);
    $message = Test_input($_POST['comment']);
+   $subject = $_POST['subject'];
 
 }
    if($fullname != '' && $email != '' && $phone != '' && $message != ''){
     
    
    // The subject line of the email
-$subject = "Hey Webber Man you have a Client's message from ".$fullname;
 
 // The plain-text body of the email
-$bodyText =  "Hey Webber Man\r\n".$message;
+$bodyText =  "Hello Shenymann you have mail from '.$fullname.' '.$phone.'\r\n".$message;
 
 // The HTML-formatted body of the email
-$bodyHtml = '<h1>Hey Webber Man message from '.$fullname.' '.$phone. '</h1>
+$bodyHtml = '<h1>Hello Shenymann </h1> <br/> <p> You have a mail from '.$fullname.' '.$phone. ' <br/> received through ShenyMan.org. </p> <br/>
     <p>'.$message.'</p>';
 
 $mail = new PHPMailer(true);

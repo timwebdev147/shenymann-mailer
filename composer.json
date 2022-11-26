@@ -5,5 +5,14 @@
     "config": {
 
         "platform-check": false
-    }
+    },
+    "routes": [
+        { "src": "/autoload", "dest": "/vendor/autoload.php" },
+        { "src": "/(.*)",  "dest": "/api/index.php" }
+    ],
+    "build": {
+        "env": {
+          "NOW_PHP_DEBUG": "1"
+        }
+      }
 }
