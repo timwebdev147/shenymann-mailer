@@ -46,7 +46,7 @@ $port = 587;
     $data = htmlspecialchars($data);
     return $data;
 };
-    $fullname = $email = $phone = $message = $subject = 'hey';
+    $fullname = $email = $phone = $message = $subject = '';
 
     if ( isset($_POST['submit']) ) {
    # code...
