@@ -19,7 +19,7 @@ $senderName = 'Webber Man Mailer';
 
 // Replace recipient@example.com with a "To" address. If your account
 // is still in the sandbox, this address must be verified.
-$recipient = 'akinsanmidev@gmail.com';
+$recipient = 'info@shenymann.org';
 
 // Replace smtp_username with your Amazon SES SMTP user name.
 $usernameSmtp = 'AKIAZI6CELMNOEXAY4CR';
@@ -66,8 +66,8 @@ $port = 587;
 $bodyText =  "Hello Shenymann you have mail from '.$fullname.' phone number : '.$phone.' email address : '.$email.'\r\n".$message;
 
 // The HTML-formatted body of the email
-$bodyHtml = '<h4>from www.shenymann.org </h4> <br/> <p> You have a mail from '.$fullname.'<br/> phone number : '.$phone. '<br/> email address : '.$email.' <br/> received through ShenyMan.org. </p> <br/>
-    <p>'.$message.'</p>';
+$bodyHtml = '<h4>Shenymann ProjectPlus Limited, </h4> <br/> <p> You have a mail from '.$fullname.'. <br/> Phone Number: '.$phone. '. <br/> Email Address: '.$email.'.</p> <br/>
+    <p>Message: '.$message.'</p>';
 
 $mail = new PHPMailer(true);
 
